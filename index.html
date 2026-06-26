@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Welcome to Jitender World, a premium gaming portal with 100+ games, password entry, score tracking, and a live arcade dashboard.">
+  <title>Welcome to Jitender World | Gaming Portal</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="bg-layers" aria-hidden="true">
+    <div class="bg bg-one"></div>
+    <div class="bg bg-two"></div>
+    <div class="grid-glow"></div>
+  </div>
+
+  <section class="gate" id="gate">
+    <div class="gate-card">
+      <p class="eyebrow">Private Arcade Access</p>
+      <h1>Welcome to Jitender World</h1>
+      <p>Enter the password to unlock 100+ arcade, puzzle, speed, skill, and brain games.</p>
+      <form id="passwordForm" class="password-form">
+        <input id="passwordInput" type="password" inputmode="numeric" placeholder="Enter password" autocomplete="current-password" required>
+        <button type="submit">Enter World</button>
+      </form>
+      <p class="hint" id="gateHint">Password required to enter.</p>
+    </div>
+  </section>
+
+  <div class="site-shell" id="siteShell" hidden>
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Jitender World home">
+        <span>JW</span>
+        <strong>Jitender World</strong>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#games">Games</a>
+        <a href="#online">Online</a>
+        <a href="#arena">Play</a>
+        <a href="#scores">Scores</a>
+        <a href="#upload">Upload</a>
+      </nav>
+      <button class="ghost" id="lockBtn" type="button">Lock</button>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">100+ game arcade</p>
+          <h1>Play fast mini-games in one premium gaming website.</h1>
+          <p>Choose a game, launch it instantly, save your score, and run it locally with the included backend server or upload it as a static GitHub Pages site.</p>
+          <div class="hero-actions">
+            <a class="primary" href="#games">Explore Games</a>
+            <a class="primary" href="#online">Online Games</a>
+            <a class="secondary" href="#arena">Open Arena</a>
+          </div>
+        </div>
+        <aside class="hero-panel">
+          <div><strong id="totalGames">120</strong><span>Total games</span></div>
+          <div><strong id="onlineCount">1200+</strong><span>Online game links</span></div>
+          <div><strong>222000</strong><span>Entry password</span></div>
+          <div><strong id="bestScore">0</strong><span>Best score</span></div>
+        </aside>
+      </section>
+
+      <section class="widgets">
+        <article><span>01</span><h3>Arcade Modes</h3><p>Click rush, target blast, dodge, reaction, and catcher games.</p></article>
+        <article><span>02</span><h3>Brain Games</h3><p>Memory, math, typing, color matching, and logic challenges.</p></article>
+        <article><span>03</span><h3>Score System</h3><p>Scores save locally and can be posted to the backend server.</p></article>
+        <article><span>04</span><h3>GitHub Ready</h3><p>Static files work on GitHub Pages without extra setup.</p></article>
+      </section>
+
+      <section class="toolbar" id="games">
+        <div><p class="eyebrow">Game library</p><h2>Choose from 100+ games</h2></div>
+        <div class="filters">
+          <input id="searchInput" type="search" placeholder="Search games">
+          <select id="categoryFilter" aria-label="Filter category"><option value="all">All categories</option></select>
+        </div>
+      </section>
+
+      <section class="game-grid" id="gameGrid" aria-live="polite"></section>
+
+      <section class="toolbar online-toolbar" id="online">
+        <div>
+          <p class="eyebrow">Online games zone</p>
+          <h2>Play popular games from the internet</h2>
+          <p>These links open official game/search/category pages in a new tab. Internet is required.</p>
+        </div>
+        <div class="filters">
+          <input id="onlineSearchInput" type="search" placeholder="Search online games">
+          <select id="onlineCategoryFilter" aria-label="Filter online category"><option value="all">All online categories</option></select>
+        </div>
+      </section>
+
+      <section class="online-grid" id="onlineGameGrid" aria-live="polite"></section>
+      <div class="pager" id="onlinePager"></div>
+
+      <section class="arena" id="arena">
+        <div class="arena-head">
+          <div><p class="eyebrow">Play zone</p><h2 id="arenaTitle">Select a game to start</h2></div>
+          <div class="score-pill">Score: <strong id="currentScore">0</strong></div>
+        </div>
+        <div class="play-area" id="playArea">
+          <div class="empty-state"><h3>No game selected</h3><p>Pick any game card from the library and the game will open here.</p></div>
+        </div>
+      </section>
+
+      <section class="scores" id="scores">
+        <div><p class="eyebrow">Leaderboard</p><h2>Your saved scores</h2></div>
+        <ol id="scoreList"></ol>
+      </section>
+
+      <section class="upload" id="upload">
+        <div>
+          <p class="eyebrow">Run and upload</p>
+          <h2>Local backend plus GitHub Pages ready.</h2>
+          <p>Use <code>npm start</code> for the local backend. The backend now includes login, game list, online game list, stats, and score APIs. For GitHub Pages, upload <code>index.html</code>, <code>styles.css</code>, and <code>script.js</code>.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
